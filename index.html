@@ -430,23 +430,62 @@
             }
         }
 
-        @media print {
-            body {
-                font-size: 11px;
-            }
-            
-            .btn-group {
-                display: none;
-            }
-            
-            .final-image {
-                height: 120px;
-            }
+       @media print {
 
-            .logos-header img, .logos-footer img {
-                filter: none !important;
-            }
-        }
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+
+    body {
+        background: #1a1a1f !important;
+        color: #ffffff;
+        font-size: 10px;
+        line-height: 1.3;
+        zoom: 0.7;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .section {
+        padding: 0.5rem 0;
+    }
+
+    .card {
+        padding: 0.6rem;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .hero,
+    .intro-section,
+    .section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .final-image {
+        height: 100px;
+        background: url("fotofondoUber.jpg") center/cover no-repeat !important;
+    }
+
+    .hero::before {
+        opacity: 1 !important;
+    }
+
+    .btn-group {
+        display: none;
+    }
+
+    .logos-header img,
+    .logos-footer img {
+        filter: brightness(0) invert(1) !important;
+    }
+}
     </style>
 <base target="_blank">
 </head>
